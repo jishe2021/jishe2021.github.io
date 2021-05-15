@@ -24,7 +24,7 @@ window.onload=function() {
                 p1.innerText =response["data"]["pre_10"]
                 p2.innerText = response["data"]["pre_20"]
                 p3.innerText = response["data"]["pre_30"]
-                ala1 = response["data"]["alarm"]//预警
+                //ala1 = response["data"]["alarm"]//预警
                 var ymin1 = Math.min.apply(null, yd);
                 var chart;
                 $(document).ready(function() {
@@ -66,15 +66,15 @@ window.onload=function() {
                             name: '预测客流',
                             data: yd ,
                             zones:[{
-                                value: ala1[0],
+                                value: 246,
                                 color: '#90ed7d',
                             },
                                 {
-                                    value: ala1[1],
+                                    value: 431,
                                     color: '#7cb5ec',
                                 },
                                 {
-                                    value: ala1[2],
+                                    value: 493,
                                     color: '#f7a35c'
                                 },{
                                     color: 'red',
