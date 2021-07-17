@@ -56,7 +56,8 @@ const pre =[[0, 10, 241], [0, 20, 445], [0, 30, 705], [1, 10, 136], [1, 20, 231]
 window.onload=function() {
     var station = document.getElementById("sta");
     var time2 = document.getElementById("timeCut");
-    var t = document.getElementById("time");
+    //var t = document.getElementById("time");
+    var t2 = document.getElementById("ttt");
     var p1 = document.getElementById("pre10");
     var p2 = document.getElementById("pre20");
     var p3 = document.getElementById("pre30");
@@ -118,10 +119,22 @@ window.onload=function() {
         pre30 = pre[statype*3+2][2];
         let xd = ["前四个时刻","前三个时刻","前两个时刻","前一个时刻","预测本时刻"];
         let yd = [e1,e2,e3,e4,pre_now];
-        t.innerText = time2.value +'min'
-        p1.innerText = pre10
-        p2.innerText = pre20
-        p3.innerText = pre30
+        t2.innerText = '接下来'+time2.value +'min客流预测';
+        p1.innerText = pre_now;
+		if (pre_now < w1){
+			p1.style.backgroundColor='#90ed7d';
+		}
+		else if(pre_now < w2){
+			p1.style.backgroundColor='#7cb5ec';
+		}
+		else if(pre_now < w3){
+			p1.style.backgroundColor='#f7a35c';
+		}
+		else{
+			p1.style.backgroundColor='#f2003c';
+		}
+        //p2.innerText = pre20
+        //p3.innerText = pre30
         //ala1 = response["data"]["alarm"]//预警
         let ymin1 = Math.min.apply(null, yd);
         let chart;
